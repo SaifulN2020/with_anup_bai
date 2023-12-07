@@ -40,7 +40,8 @@ class Teacher extends Person{
   void displayRole(){
     print("Role : teacher");
   }
-  List<String>couresTought=["Bangla","English","Math"];
+  List<String>couresTought=["Math","English","bangla"];
+
 
   Teacher(super.age, super.name, super.address,this.teacherID);
 
@@ -49,12 +50,18 @@ class Teacher extends Person{
 
 }
 void main(){
-  Student obj=Student(20, "Jone Doe", "Cumilla", 100, 3.45);
+  Student obj=Student(20, "John Doe", "123 Main st", 100, 3.45);
   obj.displayRole();
-  print(obj.name);
-  print(obj.age);
-  print(obj.address);
+  print("Name : ${obj.name}");
+  print("Age : ${obj.age}");
+  print("Address : ${obj.address}");
   print(obj.grade);
+  Teacher obj1=Teacher(50, "Mrs Smith", "456 Oak St",1001, );
+  obj1.displayRole();
+  print("Name : ${obj1.name}");
+  print("Age : ${obj1.age}");
+  print("Address : ${obj1.address}");
+
 
 
 }
