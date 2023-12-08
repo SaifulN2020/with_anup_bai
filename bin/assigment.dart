@@ -25,45 +25,58 @@ class Student extends Person {
     print("Role : Student");
   }
 
-  List<double> courseScore = [90.0,89.0,88.0];
+  List<double> courseScore = [90.0, 89.0, 88.0];
 
-  Student(super.age, super.name, super.address, this.studentID, this.grade);
-displyStudentInfo(){
-  print("Name : $name");
-  print("Age : $age");
-  print("Address : $address");
-
-}
-   average(){
-    double avg=0.0;
-    double sum=0.0;
-    for(int i=0;i<courseScore.length;i++){
-      sum=sum+courseScore[i];
-
-
-    }
-    avg=sum/courseScore.length;
-    print("Average Score : $avg");
+  Student(super.age, super.name, super.address, this.studentID, this.grade) {
+    age = age;
+    name = name;
+    address = address;
+    studentID = studentID;
+    grade = grade;
+  }
+  displyStudentInfo() {
+    print("Name : $name");
+    print("Age : $age");
+    print("Address : $address");
   }
 
+  average() {
+    double avg = 0.0;
+    double sum = 0.0;
+    for (int i = 0; i < courseScore.length; i++) {
+      sum = sum + courseScore[i];
+    }
+    avg = sum / courseScore.length;
+    print("Average Score : $avg");
+  }
 }
 
 class Teacher extends Person {
   int teacherID = 0;
   @override
   void displayRole() {
-    print("Role : teacher");
+    print("Role : Teacher");
   }
 
   List<String> coursesTaught = ["Math", "English", "Bangla"];
+  taughtteacher() {
+    print("Courses taught : ");
+    for (int i = 0; i < coursesTaught.length; i++) {
+      print("- ${coursesTaught[i]}");
+    }
+  }
 
-  Teacher(super.age, super.name, super.address, this.teacherID);
+  Teacher(super.age, super.name, super.address, this.teacherID) {
+    name = name;
+    age = age;
+    address = address;
+    teacherID = teacherID;
+  }
 
-  displayTeacherInfo(){
+  displayTeacherInfo() {
     print("Name : $name");
-    print("Age $age");
+    print("Age : $age");
     print("Address : $address");
-    print("Course Taught : $coursesTaught");
   }
 }
 
@@ -73,15 +86,13 @@ void main() {
   obj.displyStudentInfo();
   obj.average();
 
-
-
   Teacher obj1 = Teacher(
-    50,
-    "Mrs Smith",
+    35,
+    "Mrs. Smith",
     "456 Oak St",
     1001,
   );
   obj1.displayRole();
   obj1.displayTeacherInfo();
-
+  obj1.taughtteacher();
 }
